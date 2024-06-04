@@ -20,6 +20,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           publish: true
+          path: 'vhs.tape'
       - uses: actions/github-script@v7
         with:
           # This snippet is public-domain, taken from
