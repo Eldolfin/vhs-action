@@ -50,8 +50,9 @@ async function run(): Promise<void> {
             }
           }
         }
-        await exec.exec(`${bin} publish -q ${filePath}`, [], options)
-        gifUrl = gifUrl.trim();
+        const gifPath = filePath.slice(0, -5) + '.gif'
+        await exec.exec(`${bin} publish -q ${gifPath}`, [], options)
+        gifUrl = gifUrl.trim()
         core.info(`uploaded GIF URL: ${gifUrl}`)
         core.setOutput('gif-url', gifUrl)
       }
